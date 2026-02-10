@@ -11,7 +11,7 @@
     body {
       margin: 0;
       height: 100vh;
-      background: radial-gradient(circle at top, #0a001a, #000005 70%);
+      background: radial-gradient(circle at top, #000a2a, #000010 70%);
       font-family: 'Orbitron', sans-serif;
       color: #fff;
       display: flex;
@@ -27,7 +27,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, #0a001a, #000005);
+      background: radial-gradient(circle at center, #000a2a, #000010);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -48,11 +48,11 @@
       letter-spacing: 3px;
       text-align: center;
       background: linear-gradient(90deg, 
-        #8a2be2 0%, 
-        #c71585 25%, 
-        #1e90ff 50%, 
-        #32cd32 75%, 
-        #8a2be2 100%);
+        #0066ff 0%, 
+        #00aaff 25%, 
+        #00ccff 50%, 
+        #0088ff 75%, 
+        #0066ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -67,7 +67,7 @@
       font-size: 1.2rem;
       opacity: 0.8;
       text-align: center;
-      color: #aaa;
+      color: #88ccff;
       animation: blink 2s infinite;
     }
 
@@ -106,12 +106,12 @@
       opacity: 0.7;
     }
 
-    /* Softer particle colors */
-    .particles span:nth-child(1) { background: #8a2be2; box-shadow: 0 0 8px #8a2be2; }
-    .particles span:nth-child(2) { background: #c71585; box-shadow: 0 0 8px #c71585; }
-    .particles span:nth-child(3) { background: #1e90ff; box-shadow: 0 0 8px #1e90ff; }
-    .particles span:nth-child(4) { background: #32cd32; box-shadow: 0 0 8px #32cd32; }
-    .particles span:nth-child(5) { background: #8a2be2; box-shadow: 0 0 8px #8a2be2; }
+    /* Blue gradient particle colors */
+    .particles span:nth-child(1) { background: #0066ff; box-shadow: 0 0 8px #0066ff; }
+    .particles span:nth-child(2) { background: #00aaff; box-shadow: 0 0 8px #00aaff; }
+    .particles span:nth-child(3) { background: #00ccff; box-shadow: 0 0 8px #00ccff; }
+    .particles span:nth-child(4) { background: #0088ff; box-shadow: 0 0 8px #0088ff; }
+    .particles span:nth-child(5) { background: #0066ff; box-shadow: 0 0 8px #0066ff; }
 
     @keyframes float {
       from { transform: translateY(100vh); opacity: 0; }
@@ -121,38 +121,38 @@
     .card {
       text-align: center;
       z-index: 2;
-      background: rgba(15, 0, 25, 0.8);
+      background: rgba(0, 10, 30, 0.8);
       padding: 30px;
       border-radius: 20px;
-      border: 1px solid rgba(138, 43, 226, 0.2);
+      border: 1px solid rgba(0, 102, 255, 0.2);
       position: relative;
       max-width: 400px;
       width: 90%;
-      /* Softer gradient glow */
+      /* Blue gradient glow */
       box-shadow: 
-        0 0 15px rgba(138, 43, 226, 0.3),
-        0 0 30px rgba(199, 21, 133, 0.2),
-        0 0 45px rgba(30, 144, 255, 0.1),
-        inset 0 0 15px rgba(138, 43, 226, 0.1);
+        0 0 15px rgba(0, 102, 255, 0.3),
+        0 0 30px rgba(0, 170, 255, 0.2),
+        0 0 45px rgba(0, 204, 255, 0.1),
+        inset 0 0 15px rgba(0, 102, 255, 0.1);
       animation: cardGlow 6s ease-in-out infinite alternate;
     }
 
-    /* Softer card glow animation */
+    /* Blue card glow animation */
     @keyframes cardGlow {
       0% {
         box-shadow: 
-          0 0 15px rgba(138, 43, 226, 0.3),
-          0 0 30px rgba(199, 21, 133, 0.2),
-          0 0 45px rgba(30, 144, 255, 0.1),
-          inset 0 0 15px rgba(138, 43, 226, 0.1);
+          0 0 15px rgba(0, 102, 255, 0.3),
+          0 0 30px rgba(0, 170, 255, 0.2),
+          0 0 45px rgba(0, 204, 255, 0.1),
+          inset 0 0 15px rgba(0, 102, 255, 0.1);
       }
       100% {
         box-shadow: 
-          0 0 20px rgba(138, 43, 226, 0.4),
-          0 0 35px rgba(199, 21, 133, 0.25),
-          0 0 50px rgba(30, 144, 255, 0.15),
-          0 0 65px rgba(50, 205, 50, 0.1),
-          inset 0 0 20px rgba(138, 43, 226, 0.15);
+          0 0 20px rgba(0, 102, 255, 0.4),
+          0 0 35px rgba(0, 170, 255, 0.25),
+          0 0 50px rgba(0, 204, 255, 0.15),
+          0 0 65px rgba(0, 136, 255, 0.1),
+          inset 0 0 20px rgba(0, 102, 255, 0.15);
       }
     }
 
@@ -161,34 +161,34 @@
       height: 120px;
       border-radius: 50%;
       border: 3px solid;
-      border-image: linear-gradient(45deg, #8a2be2, #c71585, #1e90ff, #32cd32) 1;
+      border-image: linear-gradient(45deg, #0066ff, #00aaff, #00ccff, #0088ff) 1;
       background: url('logo.png') center/contain no-repeat;
-      background-color: #0a001a;
+      background-color: #000a2a;
       margin: 0 auto 20px;
       position: relative;
-      /* Softer avatar glow */
+      /* Blue avatar glow */
       box-shadow: 
-        0 0 12px #8a2be2,
-        0 0 24px rgba(199, 21, 133, 0.5),
-        0 0 36px rgba(30, 144, 255, 0.3),
-        inset 0 0 8px rgba(138, 43, 226, 0.3);
+        0 0 12px #0066ff,
+        0 0 24px rgba(0, 170, 255, 0.5),
+        0 0 36px rgba(0, 204, 255, 0.3),
+        inset 0 0 8px rgba(0, 102, 255, 0.3);
       animation: avatarPulse 4s ease-in-out infinite alternate;
     }
 
-    /* Softer avatar pulse */
+    /* Blue avatar pulse */
     @keyframes avatarPulse {
       0% {
         box-shadow: 
-          0 0 12px #8a2be2,
-          0 0 24px rgba(199, 21, 133, 0.5),
-          0 0 36px rgba(30, 144, 255, 0.3);
+          0 0 12px #0066ff,
+          0 0 24px rgba(0, 170, 255, 0.5),
+          0 0 36px rgba(0, 204, 255, 0.3);
       }
       100% {
         box-shadow: 
-          0 0 15px #8a2be2,
-          0 0 28px rgba(199, 21, 133, 0.6),
-          0 0 40px rgba(30, 144, 255, 0.4),
-          0 0 52px rgba(50, 205, 50, 0.2);
+          0 0 15px #0066ff,
+          0 0 28px rgba(0, 170, 255, 0.6),
+          0 0 40px rgba(0, 204, 255, 0.4),
+          0 0 52px rgba(0, 136, 255, 0.2);
       }
     }
 
@@ -197,13 +197,13 @@
       font-weight: 600;
       letter-spacing: 2px;
       position: relative;
-      /* Softer text gradient */
+      /* Blue text gradient */
       background: linear-gradient(90deg, 
-        #8a2be2 0%, 
-        #c71585 25%, 
-        #1e90ff 50%, 
-        #32cd32 75%, 
-        #8a2be2 100%);
+        #0066ff 0%, 
+        #00aaff 25%, 
+        #00ccff 50%, 
+        #0088ff 75%, 
+        #0066ff 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -216,11 +216,11 @@
       font-size: 14px;
       margin: 12px 0 30px;
       min-height: 24px;
-      /* Softer quote glow */
-      color: #ccc;
+      /* Blue quote glow */
+      color: #aaddff;
       text-shadow: 
-        0 0 3px rgba(138, 43, 226, 0.5),
-        0 0 6px rgba(199, 21, 133, 0.3);
+        0 0 3px rgba(0, 102, 255, 0.5),
+        0 0 6px rgba(0, 170, 255, 0.3);
     }
 
     .links {
@@ -234,7 +234,7 @@
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: rgba(20, 0, 40, 0.5);
+      background: rgba(0, 20, 50, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -244,16 +244,16 @@
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      border: 1px solid rgba(138, 43, 226, 0.3);
+      border: 1px solid rgba(0, 102, 255, 0.3);
     }
 
     .links a:hover {
-      background: rgba(138, 43, 226, 0.2);
+      background: rgba(0, 102, 255, 0.2);
       transform: translateY(-3px);
-      border-color: rgba(138, 43, 226, 0.6);
+      border-color: rgba(0, 102, 255, 0.6);
       box-shadow: 
-        0 0 10px rgba(138, 43, 226, 0.4),
-        0 0 20px rgba(199, 21, 133, 0.2);
+        0 0 10px rgba(0, 102, 255, 0.4),
+        0 0 20px rgba(0, 170, 255, 0.2);
     }
 
     .fa-youtube { 
@@ -284,9 +284,9 @@
 
     .music-btn {
       margin-top: 10px;
-      background: rgba(30, 0, 60, 0.5);
-      border: 1px solid rgba(138, 43, 226, 0.4);
-      color: #ccc;
+      background: rgba(0, 30, 70, 0.5);
+      border: 1px solid rgba(0, 102, 255, 0.4);
+      color: #aaddff;
       padding: 10px 20px;
       font-family: 'Orbitron', sans-serif;
       cursor: pointer;
@@ -300,24 +300,24 @@
     }
 
     .music-btn:hover {
-      background: rgba(138, 43, 226, 0.2);
-      color: #fff;
+      background: rgba(0, 102, 255, 0.2);
+      color: #ffffff;
       transform: translateY(-2px);
       box-shadow: 
-        0 0 15px rgba(138, 43, 226, 0.3),
-        0 0 25px rgba(199, 21, 133, 0.2);
+        0 0 15px rgba(0, 102, 255, 0.3),
+        0 0 25px rgba(0, 170, 255, 0.2);
     }
 
-    /* Counter Styling - Single column layout */
+    /* Counter Styling - Blue theme */
     #counter {
       display: flex;
       flex-direction: column;
       gap: 12px;
       margin-top: 25px;
       padding: 20px;
-      background: rgba(20, 0, 40, 0.5);
+      background: rgba(0, 20, 50, 0.5);
       border-radius: 12px;
-      border: 1px solid rgba(138, 43, 226, 0.2);
+      border: 1px solid rgba(0, 102, 255, 0.2);
       position: relative;
       overflow: hidden;
     }
@@ -326,9 +326,9 @@
       font-size: 14px;
       text-align: left;
       padding: 10px;
-      background: rgba(10, 0, 20, 0.8);
+      background: rgba(0, 10, 30, 0.8);
       border-radius: 8px;
-      border-left: 3px solid rgba(138, 43, 226, 0.5);
+      border-left: 3px solid rgba(0, 102, 255, 0.5);
       transition: all 0.3s;
       display: flex;
       justify-content: space-between;
@@ -336,17 +336,17 @@
     }
 
     #counter div:hover {
-      background: rgba(20, 0, 40, 0.9);
-      border-left-color: rgba(138, 43, 226, 0.8);
+      background: rgba(0, 20, 50, 0.9);
+      border-left-color: rgba(0, 102, 255, 0.8);
       transform: translateY(-2px);
     }
 
     #counter span {
       font-weight: 600;
-      color: #fff;
+      color: #88ccff;
       text-shadow: 
-        0 0 5px rgba(138, 43, 226, 0.5),
-        0 0 8px rgba(199, 21, 133, 0.3);
+        0 0 5px rgba(0, 102, 255, 0.5),
+        0 0 8px rgba(0, 170, 255, 0.3);
     }
 
     /* Softer pulse animation */
@@ -360,7 +360,7 @@
       animation: pulse 0.5s ease;
     }
 
-    /* Outer Card Glow (softer) */
+    /* Outer Card Glow - Blue theme */
     .card::before {
       content: '';
       position: absolute;
@@ -369,10 +369,10 @@
       right: -2px;
       bottom: -2px;
       background: linear-gradient(45deg, 
-        rgba(138, 43, 226, 0.3), 
-        rgba(199, 21, 133, 0.2), 
-        rgba(30, 144, 255, 0.15), 
-        rgba(50, 205, 50, 0.1));
+        rgba(0, 102, 255, 0.3), 
+        rgba(0, 170, 255, 0.2), 
+        rgba(0, 204, 255, 0.15), 
+        rgba(0, 136, 255, 0.1));
       border-radius: 22px;
       z-index: -1;
       filter: blur(12px);
