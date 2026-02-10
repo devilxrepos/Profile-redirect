@@ -20,131 +20,62 @@
       overflow: hidden;
     }
 
-    .particles span {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      animation: float 12s linear infinite;
+    /* Entrance Screen */
+    #entrance-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #0a001a, #000005);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      cursor: pointer;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
     }
 
-    /* Purple, Red, Blue, Green particles */
-    .particles span:nth-child(1) { background: #9d4edd; box-shadow: 0 0 10px #9d4edd; }
-    .particles span:nth-child(2) { background: #ff0055; box-shadow: 0 0 10px #ff0055; }
-    .particles span:nth-child(3) { background: #00aaff; box-shadow: 0 0 10px #00aaff; }
-    .particles span:nth-child(4) { background: #00ff88; box-shadow: 0 0 10px #00ff88; }
-    .particles span:nth-child(5) { background: #9d4edd; box-shadow: 0 0 10px #9d4edd; }
-
-    @keyframes float {
-      from { transform: translateY(100vh); opacity: 0; }
-      to { transform: translateY(-10vh); opacity: 1; }
+    #entrance-screen.fade-out {
+      opacity: 0;
+      visibility: hidden;
     }
 
-    .card {
-      text-align: center;
-      z-index: 2;
-      background: rgba(10, 0, 20, 0.7);
-      padding: 30px;
-      border-radius: 20px;
-      border: 1px solid rgba(157, 78, 221, 0.3);
-      position: relative;
-      max-width: 400px;
-      width: 90%;
-      /* Multi-color Gradient Glow Effect */
-      box-shadow: 
-        0 0 20px rgba(157, 78, 221, 0.4),
-        0 0 40px rgba(255, 0, 85, 0.3),
-        0 0 60px rgba(0, 170, 255, 0.2),
-        0 0 80px rgba(0, 255, 136, 0.1),
-        inset 0 0 20px rgba(157, 78, 221, 0.2);
-      animation: cardGlow 3s ease-in-out infinite alternate;
-    }
-
-    /* Multi-color Card Glow Animation */
-    @keyframes cardGlow {
-      0% {
-        box-shadow: 
-          0 0 20px rgba(157, 78, 221, 0.4),
-          0 0 40px rgba(255, 0, 85, 0.3),
-          0 0 60px rgba(0, 170, 255, 0.2),
-          0 0 80px rgba(0, 255, 136, 0.1),
-          inset 0 0 20px rgba(157, 78, 221, 0.2);
-      }
-      100% {
-        box-shadow: 
-          0 0 30px rgba(157, 78, 221, 0.5),
-          0 0 50px rgba(255, 0, 85, 0.4),
-          0 0 70px rgba(0, 170, 255, 0.3),
-          0 0 90px rgba(0, 255, 136, 0.2),
-          0 0 110px rgba(157, 78, 221, 0.1),
-          inset 0 0 25px rgba(157, 78, 221, 0.3);
-      }
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid;
-      border-image: linear-gradient(45deg, #9d4edd, #ff0055, #00aaff, #00ff88) 1;
-      background: url('logo.png') center/contain no-repeat;
-      background-color: #0a001a;
-      margin: 0 auto 20px;
-      position: relative;
-      /* Multi-color Avatar Glow */
-      box-shadow: 
-        0 0 15px #9d4edd,
-        0 0 30px rgba(255, 0, 85, 0.7),
-        0 0 45px rgba(0, 170, 255, 0.5),
-        0 0 60px rgba(0, 255, 136, 0.3),
-        inset 0 0 10px rgba(157, 78, 221, 0.4);
-      animation: avatarPulse 2s ease-in-out infinite alternate;
-    }
-
-    /* Multi-color Avatar Pulse */
-    @keyframes avatarPulse {
-      0% {
-        box-shadow: 
-          0 0 15px #9d4edd,
-          0 0 30px rgba(255, 0, 85, 0.7),
-          0 0 45px rgba(0, 170, 255, 0.5);
-      }
-      100% {
-        box-shadow: 
-          0 0 20px #9d4edd,
-          0 0 35px rgba(255, 0, 85, 0.8),
-          0 0 50px rgba(0, 170, 255, 0.6),
-          0 0 65px rgba(0, 255, 136, 0.4),
-          0 0 80px rgba(157, 78, 221, 0.3);
-      }
-    }
-
-    h1 {
-      margin: 0;
+    .enter-text {
+      font-size: 3rem;
       font-weight: 600;
-      letter-spacing: 2px;
-      position: relative;
-      /* Purple-Red-Blue-Green Gradient Text */
+      letter-spacing: 3px;
+      text-align: center;
       background: linear-gradient(90deg, 
-        #9d4edd 0%, 
-        #ff0055 25%, 
-        #00aaff 50%, 
-        #00ff88 75%, 
-        #9d4edd 100%);
-      background-size: 200% auto;
+        #8a2be2 0%, 
+        #c71585 25%, 
+        #1e90ff 50%, 
+        #32cd32 75%, 
+        #8a2be2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 
-        0 0 10px rgba(157, 78, 221, 0.5),
-        0 0 20px rgba(255, 0, 85, 0.3),
-        0 0 30px rgba(0, 170, 255, 0.2);
+      background-size: 200% auto;
       animation: 
-        textShine 3s linear infinite,
-        glitch 2s infinite;
+        textShine 8s linear infinite;
+      margin-bottom: 30px;
+      opacity: 0.9;
     }
 
-    /* Text Gradient Animation */
+    .click-hint {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      text-align: center;
+      color: #aaa;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.9; }
+    }
+
     @keyframes textShine {
       0% {
         background-position: 0% center;
@@ -154,29 +85,142 @@
       }
     }
 
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
+    /* Main Content (initially hidden) */
+    #main-content {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    #main-content.fade-in {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .particles span {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: float 12s linear infinite;
+      opacity: 0.7;
+    }
+
+    /* Softer particle colors */
+    .particles span:nth-child(1) { background: #8a2be2; box-shadow: 0 0 8px #8a2be2; }
+    .particles span:nth-child(2) { background: #c71585; box-shadow: 0 0 8px #c71585; }
+    .particles span:nth-child(3) { background: #1e90ff; box-shadow: 0 0 8px #1e90ff; }
+    .particles span:nth-child(4) { background: #32cd32; box-shadow: 0 0 8px #32cd32; }
+    .particles span:nth-child(5) { background: #8a2be2; box-shadow: 0 0 8px #8a2be2; }
+
+    @keyframes float {
+      from { transform: translateY(100vh); opacity: 0; }
+      to { transform: translateY(-10vh); opacity: 0.7; }
+    }
+
+    .card {
+      text-align: center;
+      z-index: 2;
+      background: rgba(15, 0, 25, 0.8);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(138, 43, 226, 0.2);
+      position: relative;
+      max-width: 400px;
+      width: 90%;
+      /* Softer gradient glow */
+      box-shadow: 
+        0 0 15px rgba(138, 43, 226, 0.3),
+        0 0 30px rgba(199, 21, 133, 0.2),
+        0 0 45px rgba(30, 144, 255, 0.1),
+        inset 0 0 15px rgba(138, 43, 226, 0.1);
+      animation: cardGlow 6s ease-in-out infinite alternate;
+    }
+
+    /* Softer card glow animation */
+    @keyframes cardGlow {
+      0% {
+        box-shadow: 
+          0 0 15px rgba(138, 43, 226, 0.3),
+          0 0 30px rgba(199, 21, 133, 0.2),
+          0 0 45px rgba(30, 144, 255, 0.1),
+          inset 0 0 15px rgba(138, 43, 226, 0.1);
+      }
+      100% {
+        box-shadow: 
+          0 0 20px rgba(138, 43, 226, 0.4),
+          0 0 35px rgba(199, 21, 133, 0.25),
+          0 0 50px rgba(30, 144, 255, 0.15),
+          0 0 65px rgba(50, 205, 50, 0.1),
+          inset 0 0 20px rgba(138, 43, 226, 0.15);
+      }
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid;
+      border-image: linear-gradient(45deg, #8a2be2, #c71585, #1e90ff, #32cd32) 1;
+      background: url('logo.png') center/contain no-repeat;
+      background-color: #0a001a;
+      margin: 0 auto 20px;
+      position: relative;
+      /* Softer avatar glow */
+      box-shadow: 
+        0 0 12px #8a2be2,
+        0 0 24px rgba(199, 21, 133, 0.5),
+        0 0 36px rgba(30, 144, 255, 0.3),
+        inset 0 0 8px rgba(138, 43, 226, 0.3);
+      animation: avatarPulse 4s ease-in-out infinite alternate;
+    }
+
+    /* Softer avatar pulse */
+    @keyframes avatarPulse {
+      0% {
+        box-shadow: 
+          0 0 12px #8a2be2,
+          0 0 24px rgba(199, 21, 133, 0.5),
+          0 0 36px rgba(30, 144, 255, 0.3);
+      }
+      100% {
+        box-shadow: 
+          0 0 15px #8a2be2,
+          0 0 28px rgba(199, 21, 133, 0.6),
+          0 0 40px rgba(30, 144, 255, 0.4),
+          0 0 52px rgba(50, 205, 50, 0.2);
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 2px;
+      position: relative;
+      /* Softer text gradient */
+      background: linear-gradient(90deg, 
+        #8a2be2 0%, 
+        #c71585 25%, 
+        #1e90ff 50%, 
+        #32cd32 75%, 
+        #8a2be2 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: 
+        textShine 8s linear infinite;
     }
 
     .quote {
       font-size: 14px;
       margin: 12px 0 30px;
       min-height: 24px;
-      /* Multi-color Quote Glow */
-      background: linear-gradient(90deg, #9d4edd, #ff0055, #00aaff, #00ff88);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      /* Softer quote glow */
+      color: #ccc;
       text-shadow: 
-        0 0 5px rgba(157, 78, 221, 0.7),
-        0 0 10px rgba(255, 0, 85, 0.5),
-        0 0 15px rgba(0, 170, 255, 0.3);
-      animation: textShine 4s linear infinite;
+        0 0 3px rgba(138, 43, 226, 0.5),
+        0 0 6px rgba(199, 21, 133, 0.3);
     }
 
     .links {
@@ -199,91 +243,55 @@
       font-size: 22px;
       position: relative;
       overflow: hidden;
-      transition: 0.3s;
-      /* Multi-color Link Border */
-      border: 2px solid transparent;
-      background-clip: padding-box;
-    }
-
-    .links a::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #9d4edd, #ff0055, #00aaff, #00ff88);
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: -1;
-    }
-
-    .links a::after {
-      content: attr(aria-label);
-      position: absolute;
-      bottom: -22px;
-      font-size: 11px;
-      color: #fff;
-      opacity: 0;
-      transition: 0.3s;
-      text-shadow: 0 0 5px rgba(157, 78, 221, 0.7);
-    }
-
-    .links a:hover::after {
-      opacity: 1;
-    }
-
-    .links a:hover::before {
-      opacity: 1;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(138, 43, 226, 0.3);
     }
 
     .links a:hover {
-      background: transparent;
-      transform: translateY(-3px) scale(1.1);
+      background: rgba(138, 43, 226, 0.2);
+      transform: translateY(-3px);
+      border-color: rgba(138, 43, 226, 0.6);
+      box-shadow: 
+        0 0 10px rgba(138, 43, 226, 0.4),
+        0 0 20px rgba(199, 21, 133, 0.2);
     }
 
     .fa-youtube { 
       color: #ff0000; 
-      text-shadow: 0 0 12px #ff0000; 
+      text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); 
     }
     .fa-discord { 
       color: #5865F2; 
-      text-shadow: 0 0 12px #5865F2; 
+      text-shadow: 0 0 8px rgba(88, 101, 242, 0.5); 
     }
     .fa-telegram { 
       color: #229ED9; 
-      text-shadow: 0 0 12px #229ED9; 
+      text-shadow: 0 0 8px rgba(34, 158, 217, 0.5); 
     }
     .fa-github { 
       color: #ffffff; 
-      text-shadow: 0 0 12px #ffffff; 
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); 
     }
 
     .links i {
       font-size: 22px;
-      transition: 0.3s;
+      transition: transform 0.3s;
     }
 
     .links a:hover i {
-      transform: scale(1.2);
-      filter: brightness(1.5);
+      transform: scale(1.1);
     }
 
     .music-btn {
       margin-top: 10px;
-      background: linear-gradient(45deg, 
-        rgba(157, 78, 221, 0.3),
-        rgba(255, 0, 85, 0.3),
-        rgba(0, 170, 255, 0.3),
-        rgba(0, 255, 136, 0.3));
-      border: 2px solid transparent;
-      color: #fff;
+      background: rgba(30, 0, 60, 0.5);
+      border: 1px solid rgba(138, 43, 226, 0.4);
+      color: #ccc;
       padding: 10px 20px;
       font-family: 'Orbitron', sans-serif;
       cursor: pointer;
       border-radius: 10px;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       margin-bottom: 20px;
       position: relative;
       overflow: hidden;
@@ -291,80 +299,27 @@
       letter-spacing: 1px;
     }
 
-    .music-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.3), 
-        transparent);
-      transition: 0.5s;
-    }
-
     .music-btn:hover {
-      transform: translateY(-3px);
+      background: rgba(138, 43, 226, 0.2);
+      color: #fff;
+      transform: translateY(-2px);
       box-shadow: 
-        0 0 20px rgba(157, 78, 221, 0.6),
-        0 0 30px rgba(255, 0, 85, 0.4),
-        0 0 40px rgba(0, 170, 255, 0.3);
+        0 0 15px rgba(138, 43, 226, 0.3),
+        0 0 25px rgba(199, 21, 133, 0.2);
     }
 
-    .music-btn:hover::before {
-      left: 100%;
-    }
-
-    .music-btn:active {
-      transform: translateY(-1px);
-    }
-
-    /* Counter Styling */
+    /* Counter Styling - Single column layout */
     #counter {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
       margin-top: 25px;
       padding: 20px;
       background: rgba(20, 0, 40, 0.5);
       border-radius: 12px;
-      border: 2px solid transparent;
+      border: 1px solid rgba(138, 43, 226, 0.2);
       position: relative;
       overflow: hidden;
-    }
-
-    #counter::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, 
-        #9d4edd, 
-        #ff0055, 
-        #00aaff, 
-        #00ff88, 
-        #9d4edd);
-      z-index: -1;
-      filter: blur(10px);
-      opacity: 0.7;
-      animation: counterBorder 4s linear infinite;
-      background-size: 300% 300%;
-    }
-
-    @keyframes counterBorder {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
     }
 
     #counter div {
@@ -373,116 +328,136 @@
       padding: 10px;
       background: rgba(10, 0, 20, 0.8);
       border-radius: 8px;
-      border-left: 4px solid;
-      border-image: linear-gradient(to bottom, #9d4edd, #ff0055, #00aaff, #00ff88) 1;
+      border-left: 3px solid rgba(138, 43, 226, 0.5);
       transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     #counter div:hover {
-      transform: translateY(-3px);
       background: rgba(20, 0, 40, 0.9);
-      box-shadow: 
-        0 5px 15px rgba(157, 78, 221, 0.4),
-        0 0 20px rgba(255, 0, 85, 0.2);
+      border-left-color: rgba(138, 43, 226, 0.8);
+      transform: translateY(-2px);
     }
 
     #counter span {
       font-weight: 600;
       color: #fff;
       text-shadow: 
-        0 0 8px #9d4edd,
-        0 0 12px rgba(255, 0, 85, 0.5);
-      float: right;
+        0 0 5px rgba(138, 43, 226, 0.5),
+        0 0 8px rgba(199, 21, 133, 0.3);
     }
 
-    /* Pulse animation for counter updates */
+    /* Softer pulse animation */
     @keyframes pulse {
-      0% { transform: scale(1); text-shadow: 0 0 8px #9d4edd; }
-      50% { transform: scale(1.1); text-shadow: 0 0 12px #ff0055, 0 0 16px #00aaff; }
-      100% { transform: scale(1); text-shadow: 0 0 8px #9d4edd; }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
     .counter-update {
       animation: pulse 0.5s ease;
     }
 
-    /* Outer Card Glow */
+    /* Outer Card Glow (softer) */
     .card::before {
       content: '';
       position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
       background: linear-gradient(45deg, 
-        #9d4edd, 
-        #ff0055, 
-        #00aaff, 
-        #00ff88, 
-        #9d4edd);
-      border-radius: 24px;
+        rgba(138, 43, 226, 0.3), 
+        rgba(199, 21, 133, 0.2), 
+        rgba(30, 144, 255, 0.15), 
+        rgba(50, 205, 50, 0.1));
+      border-radius: 22px;
       z-index: -1;
-      filter: blur(20px);
-      opacity: 0.5;
-      animation: outerGlow 5s linear infinite;
-      background-size: 400% 400%;
+      filter: blur(12px);
+      opacity: 0.4;
+      animation: outerGlow 8s linear infinite;
+      background-size: 200% 200%;
     }
 
     @keyframes outerGlow {
       0% {
         background-position: 0% 50%;
-        opacity: 0.4;
+        opacity: 0.3;
       }
       50% {
         background-position: 100% 50%;
-        opacity: 0.7;
+        opacity: 0.5;
       }
       100% {
         background-position: 0% 50%;
-        opacity: 0.4;
+        opacity: 0.3;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="particles">
-    <span style="left:10%; animation-delay:0s"></span>
-    <span style="left:30%; animation-delay:2s"></span>
-    <span style="left:50%; animation-delay:4s"></span>
-    <span style="left:70%; animation-delay:1s"></span>
-    <span style="left:90%; animation-delay:3s"></span>
+  <!-- Entrance Screen -->
+  <div id="entrance-screen">
+    <div class="enter-text">Click to enter</div>
+    <div class="click-hint">Click anywhere to continue</div>
   </div>
 
-  <div class="card">
-    <div class="avatar"></div>
-    <h1 id="glitch" data-text="HS MUJAHID YT">HS MUJAHID YT</h1>
-    <div class="quote"><span id="type"></span></div>
+  <!-- Main Content -->
+  <div id="main-content">
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
-    <div class="links">
-      <a href="https://www.youtube.com/@hs_mujahid_live" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://discord.gg/3AAfggSKAf" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-      <a href="https://t.me/hsmujahidytpg" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-      <a href="https://github.com/devilxrepos" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <div class="particles">
+      <span style="left:10%; animation-delay:0s"></span>
+      <span style="left:30%; animation-delay:2s"></span>
+      <span style="left:50%; animation-delay:4s"></span>
+      <span style="left:70%; animation-delay:1s"></span>
+      <span style="left:90%; animation-delay:3s"></span>
     </div>
 
-    <button class="music-btn" onclick="toggleMusic()">🎵 Toggle Music</button>
+    <div class="card">
+      <div class="avatar"></div>
+      <h1 id="glitch" data-text="HS MUJAHID YT">HS MUJAHID YT</h1>
+      <div class="quote"><span id="type"></span></div>
 
-    <div id="counter">
-      <div>👁 Total Visitors: <span id="totalVisitors">0</span></div>
-      <div>📊 Today: <span id="todayVisitors">0</span></div>
-      <div>👀 Online Now: <span id="onlineNow">1</span></div>
+      <div class="links">
+        <a href="https://www.youtube.com/@hs_mujahid_live" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://discord.gg/3AAfggSKAf" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://t.me/hsmujahidytpg" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/devilxrepos" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+
+      <button class="music-btn" onclick="toggleMusic()">🎵 Toggle Music</button>
+
+      <div id="counter">
+        <div>👁 Total Visitors: <span id="totalVisitors">0</span></div>
+        <div>📊 Today: <span id="todayVisitors">0</span></div>
+      </div>
     </div>
   </div>
 
 <script>
+  // Entrance screen click handler
+  document.getElementById('entrance-screen').addEventListener('click', function() {
+    const entranceScreen = document.getElementById('entrance-screen');
+    const mainContent = document.getElementById('main-content');
+    
+    entranceScreen.classList.add('fade-out');
+    
+    setTimeout(() => {
+      mainContent.classList.add('fade-in');
+      // Start background music when entering
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.3;
+      music.play().catch(() => {});
+    }, 500);
+  });
+
   // Typewriter effect
   const text = "I don't seek power — I am power!";
   let i = 0;
@@ -493,20 +468,19 @@
       setTimeout(typeEffect, 60);
     }
   }
-  typeEffect();
+
+  // Start type effect after entrance
+  setTimeout(typeEffect, 1000);
 
   // ===== Background Music Logic =====
   const music = document.getElementById("bgMusic");
-  music.volume = 0.4;
-
-  document.addEventListener("click", function startMusic() {
-    music.play().catch(() => {});
-    document.removeEventListener("click", startMusic);
-  });
 
   function toggleMusic() {
-    if (music.paused) music.play();
-    else music.pause();
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
   }
 
   // ===== SIMPLE VISITOR COUNTER =====
@@ -545,7 +519,7 @@
       data.todayDate = today;
     }
     
-    // REMOVED REFRESH PROTECTION - Always increment on page load
+    // Always increment on page load (no refresh protection)
     data.total += 1;
     data.today += 1;
     
@@ -555,27 +529,11 @@
     // Update display
     updateCounter('totalVisitors', data.total);
     updateCounter('todayVisitors', data.today);
-    
-    // Calculate online users (simulated, always increases)
-    let onlineUsers = data.today % 50 + 1; // Based on today's visitors
-    if (Math.random() > 0.7) onlineUsers += Math.floor(Math.random() * 10);
-    
-    updateCounter('onlineNow', onlineUsers);
   }
 
   // === INITIALIZE EVERYTHING ===
   document.addEventListener('DOMContentLoaded', function() {
     updateVisitorCounts();
-    
-    // Simulate online user count changing (always increasing)
-    setInterval(() => {
-      const onlineElement = document.getElementById('onlineNow');
-      let current = parseInt(onlineElement.textContent) || 1;
-      // Always increase by 0-3 on each interval
-      const increase = Math.floor(Math.random() * 4);
-      const newValue = current + increase;
-      updateCounter('onlineNow', newValue);
-    }, 10000); // Update every 10 seconds
   });
 
 </script>
