@@ -6,12 +6,16 @@
   <title>Great MUJAHID</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Web Icon / Favicon -->
+  <link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAA8AGAMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAAB//EABQQAQAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8An0ATQBB//9k=">
+  <!-- Also add apple touch icon for iOS devices -->
+  <link rel="apple-touch-icon" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAA8AGAMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAAB//EABQQAQAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8An0ATQBB//9k=">
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       height: 100vh;
-      background: radial-gradient(circle at top, #000a2a, #000010 70%);
+      background: radial-gradient(circle at top, #0a0010, #000010 70%);
       font-family: 'Orbitron', sans-serif;
       color: #fff;
       display: flex;
@@ -27,7 +31,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, #000a2a, #000010);
+      background: radial-gradient(circle at center, #0a0010, #000010);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -42,33 +46,114 @@
       visibility: hidden;
     }
 
+    /* Glowing box container for enter text */
+    .enter-container {
+      padding: 40px 60px;
+      border-radius: 20px;
+      position: relative;
+      margin-bottom: 30px;
+      animation: containerGlow 3s ease-in-out infinite alternate;
+    }
+
+    .enter-container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, 
+        #ff0000, #ff0066, #ff00cc, #cc00ff, 
+        #0066ff, #00aaff, #00ccff, #0066ff,
+        #ff0000);
+      border-radius: 22px;
+      z-index: -1;
+      filter: blur(15px);
+      opacity: 0.7;
+      animation: borderFlow 8s linear infinite;
+      background-size: 300% 300%;
+    }
+
+    .enter-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: inherit;
+      border-radius: 18px;
+      z-index: -1;
+      background: rgba(10, 0, 20, 0.6);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes borderFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes containerGlow {
+      0% {
+        box-shadow: 
+          0 0 30px rgba(255, 0, 0, 0.3),
+          0 0 60px rgba(255, 0, 255, 0.2),
+          0 0 90px rgba(0, 0, 255, 0.1);
+      }
+      50% {
+        box-shadow: 
+          0 0 40px rgba(255, 0, 0, 0.4),
+          0 0 70px rgba(255, 0, 255, 0.3),
+          0 0 100px rgba(0, 0, 255, 0.2);
+      }
+      100% {
+        box-shadow: 
+          0 0 50px rgba(255, 0, 0, 0.5),
+          0 0 80px rgba(255, 0, 255, 0.4),
+          0 0 110px rgba(0, 0, 255, 0.3);
+      }
+    }
+
     .enter-text {
       font-size: 3rem;
       font-weight: 600;
       letter-spacing: 3px;
       text-align: center;
       background: linear-gradient(90deg, 
-        #0066ff 0%, 
-        #00aaff 25%, 
-        #00ccff 50%, 
-        #0088ff 75%, 
-        #0066ff 100%);
+        #ff0000 0%,
+        #ff0066 20%,
+        #ff00cc 40%,
+        #cc00ff 60%,
+        #0066ff 80%,
+        #ff0000 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       background-size: 200% auto;
-      animation: 
-        textShine 8s linear infinite;
-      margin-bottom: 30px;
+      animation: textShine 8s linear infinite;
       opacity: 0.9;
+      position: relative;
+      text-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.3),
+        0 0 60px rgba(0, 0, 255, 0.2);
     }
 
     .click-hint {
       font-size: 1.2rem;
       opacity: 0.8;
       text-align: center;
-      color: #88ccff;
+      color: #ffccff;
       animation: blink 2s infinite;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
     }
 
     @keyframes blink {
@@ -106,12 +191,12 @@
       opacity: 0.7;
     }
 
-    /* Blue gradient particle colors */
-    .particles span:nth-child(1) { background: #0066ff; box-shadow: 0 0 8px #0066ff; }
-    .particles span:nth-child(2) { background: #00aaff; box-shadow: 0 0 8px #00aaff; }
-    .particles span:nth-child(3) { background: #00ccff; box-shadow: 0 0 8px #00ccff; }
-    .particles span:nth-child(4) { background: #0088ff; box-shadow: 0 0 8px #0088ff; }
-    .particles span:nth-child(5) { background: #0066ff; box-shadow: 0 0 8px #0066ff; }
+    /* Multi-color particle colors */
+    .particles span:nth-child(1) { background: #ff0000; box-shadow: 0 0 8px #ff0000; }
+    .particles span:nth-child(2) { background: #ff00ff; box-shadow: 0 0 8px #ff00ff; }
+    .particles span:nth-child(3) { background: #0000ff; box-shadow: 0 0 8px #0000ff; }
+    .particles span:nth-child(4) { background: #ff0066; box-shadow: 0 0 8px #ff0066; }
+    .particles span:nth-child(5) { background: #cc00ff; box-shadow: 0 0 8px #cc00ff; }
 
     @keyframes float {
       from { transform: translateY(100vh); opacity: 0; }
@@ -121,38 +206,38 @@
     .card {
       text-align: center;
       z-index: 2;
-      background: rgba(0, 10, 30, 0.8);
+      background: rgba(10, 0, 20, 0.8);
       padding: 30px;
       border-radius: 20px;
-      border: 1px solid rgba(0, 102, 255, 0.2);
+      border: 1px solid rgba(255, 0, 255, 0.2);
       position: relative;
       max-width: 400px;
       width: 90%;
-      /* Blue gradient glow */
+      /* Multi-color glow */
       box-shadow: 
-        0 0 15px rgba(0, 102, 255, 0.3),
-        0 0 30px rgba(0, 170, 255, 0.2),
-        0 0 45px rgba(0, 204, 255, 0.1),
-        inset 0 0 15px rgba(0, 102, 255, 0.1);
+        0 0 15px rgba(255, 0, 0, 0.3),
+        0 0 30px rgba(255, 0, 255, 0.2),
+        0 0 45px rgba(0, 0, 255, 0.1),
+        inset 0 0 15px rgba(255, 0, 255, 0.1);
       animation: cardGlow 6s ease-in-out infinite alternate;
     }
 
-    /* Blue card glow animation */
+    /* Multi-color card glow animation */
     @keyframes cardGlow {
       0% {
         box-shadow: 
-          0 0 15px rgba(0, 102, 255, 0.3),
-          0 0 30px rgba(0, 170, 255, 0.2),
-          0 0 45px rgba(0, 204, 255, 0.1),
-          inset 0 0 15px rgba(0, 102, 255, 0.1);
+          0 0 15px rgba(255, 0, 0, 0.3),
+          0 0 30px rgba(255, 0, 255, 0.2),
+          0 0 45px rgba(0, 0, 255, 0.1),
+          inset 0 0 15px rgba(255, 0, 255, 0.1);
       }
       100% {
         box-shadow: 
-          0 0 20px rgba(0, 102, 255, 0.4),
-          0 0 35px rgba(0, 170, 255, 0.25),
-          0 0 50px rgba(0, 204, 255, 0.15),
-          0 0 65px rgba(0, 136, 255, 0.1),
-          inset 0 0 20px rgba(0, 102, 255, 0.15);
+          0 0 20px rgba(255, 0, 0, 0.4),
+          0 0 35px rgba(255, 0, 255, 0.25),
+          0 0 50px rgba(0, 0, 255, 0.15),
+          0 0 65px rgba(255, 0, 128, 0.1),
+          inset 0 0 20px rgba(255, 0, 255, 0.15);
       }
     }
 
@@ -161,34 +246,45 @@
       height: 120px;
       border-radius: 50%;
       border: 3px solid;
-      border-image: linear-gradient(45deg, #0066ff, #00aaff, #00ccff, #0088ff) 1;
+      border-image: linear-gradient(45deg, #ff0000, #ff00ff, #0000ff, #ff0066) 1;
       background: url('logo.png') center/contain no-repeat;
-      background-color: #000a2a;
+      background-color: #0a0010;
       margin: 0 auto 20px;
       position: relative;
-      /* Blue avatar glow */
+      /* Multi-color avatar glow */
       box-shadow: 
-        0 0 12px #0066ff,
-        0 0 24px rgba(0, 170, 255, 0.5),
-        0 0 36px rgba(0, 204, 255, 0.3),
-        inset 0 0 8px rgba(0, 102, 255, 0.3);
-      animation: avatarPulse 4s ease-in-out infinite alternate;
+        0 0 12px #ff0000,
+        0 0 24px rgba(255, 0, 255, 0.5),
+        0 0 36px rgba(0, 0, 255, 0.3),
+        inset 0 0 8px rgba(255, 0, 255, 0.3);
+      /* Slow rotation animation */
+      animation: avatarPulse 4s ease-in-out infinite alternate, slowSpin 20s linear infinite;
     }
 
-    /* Blue avatar pulse */
+    /* Multi-color avatar pulse */
     @keyframes avatarPulse {
       0% {
         box-shadow: 
-          0 0 12px #0066ff,
-          0 0 24px rgba(0, 170, 255, 0.5),
-          0 0 36px rgba(0, 204, 255, 0.3);
+          0 0 12px #ff0000,
+          0 0 24px rgba(255, 0, 255, 0.5),
+          0 0 36px rgba(0, 0, 255, 0.3);
       }
       100% {
         box-shadow: 
-          0 0 15px #0066ff,
-          0 0 28px rgba(0, 170, 255, 0.6),
-          0 0 40px rgba(0, 204, 255, 0.4),
-          0 0 52px rgba(0, 136, 255, 0.2);
+          0 0 15px #ff0000,
+          0 0 28px rgba(255, 0, 255, 0.6),
+          0 0 40px rgba(0, 0, 255, 0.4),
+          0 0 52px rgba(255, 0, 128, 0.2);
+      }
+    }
+
+    /* Slow rotation for logo */
+    @keyframes slowSpin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
       }
     }
 
@@ -197,13 +293,14 @@
       font-weight: 600;
       letter-spacing: 2px;
       position: relative;
-      /* Blue text gradient */
+      /* Multi-color text gradient */
       background: linear-gradient(90deg, 
-        #0066ff 0%, 
-        #00aaff 25%, 
-        #00ccff 50%, 
-        #0088ff 75%, 
-        #0066ff 100%);
+        #ff0000 0%,
+        #ff0066 20%,
+        #ff00cc 40%,
+        #cc00ff 60%,
+        #0066ff 80%,
+        #ff0000 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -216,11 +313,12 @@
       font-size: 14px;
       margin: 12px 0 30px;
       min-height: 24px;
-      /* Blue quote glow */
-      color: #aaddff;
+      /* Multi-color quote glow */
+      color: #ffccff;
       text-shadow: 
-        0 0 3px rgba(0, 102, 255, 0.5),
-        0 0 6px rgba(0, 170, 255, 0.3);
+        0 0 3px rgba(255, 0, 0, 0.5),
+        0 0 6px rgba(255, 0, 255, 0.3),
+        0 0 9px rgba(0, 0, 255, 0.2);
     }
 
     .links {
@@ -234,7 +332,7 @@
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: rgba(0, 20, 50, 0.5);
+      background: rgba(20, 0, 30, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -244,16 +342,17 @@
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      border: 1px solid rgba(0, 102, 255, 0.3);
+      border: 1px solid rgba(255, 0, 255, 0.3);
     }
 
     .links a:hover {
-      background: rgba(0, 102, 255, 0.2);
+      background: rgba(255, 0, 255, 0.2);
       transform: translateY(-3px);
-      border-color: rgba(0, 102, 255, 0.6);
+      border-color: rgba(255, 0, 255, 0.6);
       box-shadow: 
-        0 0 10px rgba(0, 102, 255, 0.4),
-        0 0 20px rgba(0, 170, 255, 0.2);
+        0 0 10px rgba(255, 0, 0, 0.4),
+        0 0 20px rgba(255, 0, 255, 0.2),
+        0 0 30px rgba(0, 0, 255, 0.1);
     }
 
     .fa-youtube { 
@@ -284,9 +383,9 @@
 
     .music-btn {
       margin-top: 10px;
-      background: rgba(0, 30, 70, 0.5);
-      border: 1px solid rgba(0, 102, 255, 0.4);
-      color: #aaddff;
+      background: rgba(30, 0, 40, 0.5);
+      border: 1px solid rgba(255, 0, 255, 0.4);
+      color: #ffccff;
       padding: 10px 20px;
       font-family: 'Orbitron', sans-serif;
       cursor: pointer;
@@ -300,24 +399,25 @@
     }
 
     .music-btn:hover {
-      background: rgba(0, 102, 255, 0.2);
+      background: rgba(255, 0, 255, 0.2);
       color: #ffffff;
       transform: translateY(-2px);
       box-shadow: 
-        0 0 15px rgba(0, 102, 255, 0.3),
-        0 0 25px rgba(0, 170, 255, 0.2);
+        0 0 15px rgba(255, 0, 0, 0.3),
+        0 0 25px rgba(255, 0, 255, 0.2),
+        0 0 35px rgba(0, 0, 255, 0.1);
     }
 
-    /* Counter Styling - Blue theme */
+    /* Counter Styling - Multi-color theme */
     #counter {
       display: flex;
       flex-direction: column;
       gap: 12px;
       margin-top: 25px;
       padding: 20px;
-      background: rgba(0, 20, 50, 0.5);
+      background: rgba(20, 0, 30, 0.5);
       border-radius: 12px;
-      border: 1px solid rgba(0, 102, 255, 0.2);
+      border: 1px solid rgba(255, 0, 255, 0.2);
       position: relative;
       overflow: hidden;
     }
@@ -326,9 +426,9 @@
       font-size: 14px;
       text-align: left;
       padding: 10px;
-      background: rgba(0, 10, 30, 0.8);
+      background: rgba(10, 0, 20, 0.8);
       border-radius: 8px;
-      border-left: 3px solid rgba(0, 102, 255, 0.5);
+      border-left: 3px solid rgba(255, 0, 255, 0.5);
       transition: all 0.3s;
       display: flex;
       justify-content: space-between;
@@ -336,17 +436,18 @@
     }
 
     #counter div:hover {
-      background: rgba(0, 20, 50, 0.9);
-      border-left-color: rgba(0, 102, 255, 0.8);
+      background: rgba(20, 0, 30, 0.9);
+      border-left-color: rgba(255, 0, 255, 0.8);
       transform: translateY(-2px);
     }
 
     #counter span {
       font-weight: 600;
-      color: #88ccff;
+      color: #ff99ff;
       text-shadow: 
-        0 0 5px rgba(0, 102, 255, 0.5),
-        0 0 8px rgba(0, 170, 255, 0.3);
+        0 0 5px rgba(255, 0, 0, 0.5),
+        0 0 8px rgba(255, 0, 255, 0.3),
+        0 0 11px rgba(0, 0, 255, 0.2);
     }
 
     /* Softer pulse animation */
@@ -360,7 +461,7 @@
       animation: pulse 0.5s ease;
     }
 
-    /* Outer Card Glow - Blue theme */
+    /* Outer Card Glow - Multi-color theme */
     .card::before {
       content: '';
       position: absolute;
@@ -369,10 +470,10 @@
       right: -2px;
       bottom: -2px;
       background: linear-gradient(45deg, 
-        rgba(0, 102, 255, 0.3), 
-        rgba(0, 170, 255, 0.2), 
-        rgba(0, 204, 255, 0.15), 
-        rgba(0, 136, 255, 0.1));
+        rgba(255, 0, 0, 0.3),
+        rgba(255, 0, 255, 0.2),
+        rgba(0, 0, 255, 0.15),
+        rgba(255, 0, 128, 0.1));
       border-radius: 22px;
       z-index: -1;
       filter: blur(12px);
@@ -401,7 +502,9 @@
 
   <!-- Entrance Screen -->
   <div id="entrance-screen">
-    <div class="enter-text">Click to enter</div>
+    <div class="enter-container">
+      <div class="enter-text">Click to enter</div>
+    </div>
     <div class="click-hint">Click anywhere to continue</div>
   </div>
 
